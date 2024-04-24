@@ -4,6 +4,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: "free -m"
-      - run: df -h
-      - run: lsb_release -a 
+      - run: |
+          free -h
+          df -h
+          lscpu
+          ifconfig
