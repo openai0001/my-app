@@ -4,16 +4,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 查看系统 
-        run: |
-          echo 内存
-          free -h
-          echo 硬盘
-          df -h
-          echo 处理器
-          lscpu
-          echo 网络地址
-          ifconfig
-      - name: 测试自然语言
-        run: |
-            curl -X POST "https://api.groq.com/openai/v1/chat/completions" -H "Authorization: Bearer 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" -H "Content-Type: application/json" -d '{"messages": [{"role": "user", "content": "用中文回答：如何把小米音箱连接ChatGPT"}], "model": "mixtral-8x7b-32768"}'
+      #- name: 测试自然语言
+      #  run: |
+      #      curl -X POST "https://api.groq.com/openai/v1/chat/completions" -H "Authorization: Bearer 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" -H "Content-Type: application/json" -d '{"messages": [{"role": "user", "content": "用中文回答：如何把小米音箱连接ChatGPT"}], "model": "mixtral-8x7b-32768"}'
+      - name: 服务
+        run: python3 -m http.server
