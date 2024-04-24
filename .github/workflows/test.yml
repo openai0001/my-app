@@ -4,4 +4,7 @@ jobs:
     runs-on: ubuntu-lastest
     steps:
       - uses: actions/checkout@v4
-      - run: pwd 
+      - run: |
+        free -m
+        df -h
+        lsb_release -a 
